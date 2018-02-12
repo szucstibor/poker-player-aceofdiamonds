@@ -44,7 +44,7 @@ public class Player {
             } else if (getGoodHeights().contains(card1rank) || getGoodHeights().contains(card2rank)) {
                 return 500;
             } else {
-                return 1;
+                return 0;
             }
 
 //            obj.get("");
