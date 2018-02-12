@@ -14,7 +14,6 @@ public class Player {
     static final String VERSION = "Default Java folding player";
 
     static List<String> getGoodHeights() {
-        List<HashMap<String, String>> goodCardCombinations = new ArrayList<>();
         List<String> goodRanks = new ArrayList<>();
         String[] ranks = { "A","K","Q","J","10" };
         for(int i = 0; i < ranks.length; i++){
@@ -33,8 +32,8 @@ public class Player {
             for (JsonElement req : requests) {
                 if (!req.getAsJsonObject().get("hole_cards").isJsonNull()){
                     ourCards = req.getAsJsonArray();
-                    card1rank = ourCards.get(0).getAsJsonObject().get("rank").getAsString();
-                    card2rank = ourCards.get(1).getAsJsonObject().get("rank").getAsString();
+                    card1rank = ourCards.get(0).getAsJsonObject().get("rank").toString();
+                    card2rank = ourCards.get(1).getAsJsonObject().get("rank").toString();
                 }
             }
             if (card1rank.equals("0")){
