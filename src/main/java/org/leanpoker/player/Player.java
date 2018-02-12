@@ -26,14 +26,14 @@ public class Player {
 
     public static int betRequest(JsonElement request) {
         try{
-            JsonArray requests = request.getAsJsonArray("request");
+            JsonArray requests = request.getAsJsonArray();
             List<Map<String, String>> ourCards = new ArrayList();
             for (JsonElement request : requests) {
                 if (!request.getAsJsonObject().get("hole_cards").isJsonNull()){
                     ourCards.add(request.getAsJsonObject().get("hole_cards"));
                 }
             }
-            obj.get("");
+//            obj.get("");
         } catch (Exception e){
           return 999;
         }
