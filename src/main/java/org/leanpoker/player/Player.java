@@ -35,14 +35,15 @@ public class Player {
                     card1rank = ourCards.get(0).getAsJsonObject().get("rank").getAsString();
                     System.out.println(card1rank);
                     card2rank = ourCards.get(1).getAsJsonObject().get("rank").getAsString();
-                    System.out.println(card2rank);
-                    System.out.println(card2rank);
-                    System.out.println(card2rank);
-                    System.out.println(card2rank);
-                    System.out.println(card2rank);
-                    System.out.println(card2rank);
-                    System.out.println(card2rank);
-                    System.out.println(card2rank);
+                    System.out.println("ertzdghj" + card2rank);
+                    System.out.println("ertzdghj" + card2rank);
+                    System.out.println("ertzdghj" + card2rank);
+                    System.out.println("ertzdghj" + card2rank);
+                    System.out.println("ertzdghj" + card2rank);
+                    System.out.println("ertzdghj" + card2rank);
+                    System.out.println("ertzdghj" + card2rank);
+                    System.out.println("ertzdghj" + card2rank);
+                    System.out.println("ertzdghj" + card2rank);
                 }
             }
             if (card1rank.equals("0")){
@@ -57,13 +58,6 @@ public class Player {
 
 //            obj.get("");
         } catch (Exception e){
-            System.out.println(e);
-            System.out.println(e);
-            System.out.println(e);
-            System.out.println(e);
-            System.out.println(e);
-            System.out.println(e);
-            System.out.println(e);
           return 0;
         }
     }
