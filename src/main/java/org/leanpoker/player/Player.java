@@ -26,11 +26,10 @@ public class Player {
             JsonObject object = request.getAsJsonObject();
             JsonArray jarray = object.getAsJsonArray("players");
             JsonObject ourPlayer = jarray.get(2).getAsJsonObject();
-            System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ezazgeciobject" + object);
-            System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ezazgecijarray" + jarray);
-            System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ezazgeciasd" + ourPlayer);
-            String card1rank = "0";
-            String card2rank = "0";
+
+            System.out.println("OBJECT++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" + object);
+            System.out.println("JARRAY++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" + jarray);
+            System.out.println("OUR PLAYER++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" + ourPlayer);
 
             JsonArray ourCards = ourPlayer.get("hole_cards").getAsJsonArray();
             System.out.println(ourCards);
@@ -38,52 +37,24 @@ public class Player {
             JsonElement card1 = ourCards.get(0);
             JsonElement card2 = ourCards.get(1);
 
-            System.out.println("____________________________________________________________________");
+            System.out.println("OUR CARDS____________________________________________________________________");
             System.out.println(ourCards);
-            Map result1 = new Gson().fromJson(card1, Map.class);
-            System.out.println(result1.get("rank"));
-            Map result2 = new Gson().fromJson(card2, Map.class);
-            System.out.println(result2.get("rank"));
+            Map card1Map = new Gson().fromJson(card1, Map.class);
+            System.out.println(card1Map.get("rank"));
+            Map card2Map = new Gson().fromJson(card2, Map.class);
+            System.out.println(card2Map.get("rank"));
 
-            String rank1 = (String) result1.get("rank");
-            String rank2 = (String) result2.get("rank");
+            String card1Rank = (String) card1Map.get("rank");
+            String card2Rank = (String) card2Map.get("rank");
 
-            /*for (JsonElement req : jarray) {
-                if (req.getAsJsonObject().get("hole_cards") != null){
-                    ourCards = req.getAsJsonArray();
-                    card1rank = ourCards.get(0).getAsJsonObject().get("rank").getAsString();
-                    System.out.println(card1rank);
-                    card2rank = ourCards.get(1).getAsJsonObject().get("rank").getAsString();
-                    System.out.println("ertzdghj" + card2rank);
-                    System.out.println("ertzdghj" + card2rank);
-                    System.out.println("ertzdghj" + card2rank);
-                    System.out.println("ertzdghj" + card2rank);
-                    System.out.println("ertzdghj" + card2rank);
-                    System.out.println("ertzdghj" + card2rank);
-                    System.out.println("ertzdghj" + card2rank);
-                    System.out.println("ertzdghj" + card2rank);
-                    System.out.println("ertzdghj" + card2rank);
-                }
-            }*/
-
-            if (getGoodHeights().contains(rank1) && getGoodHeights().contains(rank2) && rank1.equals(rank2)) {
+            if (getGoodHeights().contains(card1Rank) && getGoodHeights().contains(card2Rank) && card1Rank.equals(card2Rank)) {
                 return 500;
-            /*} else if (getGoodHeights().contains(card1rank) && getGoodHeights().contains(card2rank)) {
-                return 20;
-            } else if (getGoodHeights().contains(card1rank) || getGoodHeights().contains(card2rank)) {
-                return 30;*/
             } else {
                 return 0;
             }
 
-//            obj.get("");
         } catch (Exception e){
-        System.out.println("exception" + e);
-        System.out.println("exception" + e);
-        System.out.println("exception" + e);
-        System.out.println("exception" + e);
-        System.out.println("exception" + e);
-        System.out.println("exception" + e);
+        System.out.println("EXCEPTION !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!" + e);
           return 0;
         }
     }
