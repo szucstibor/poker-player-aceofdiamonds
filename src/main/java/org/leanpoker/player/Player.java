@@ -65,15 +65,15 @@ public class Player {
                     }
                     return 500;
                 } else if (communityCards.size() == 0) {
-                    return smallBlind * 2;
+                    return smallBlind * 3;
                 } else {
                     List<Map<String, String>> community = new ArrayList<>();
                     List<String> ranks = new ArrayList<>();
                     for (JsonElement card : communityCards) {
                         community.add(new Gson().fromJson(card, Map.class));
                     }
-                    for (int i = 0; i < community.size(); i++) {
-                        ranks.add(community.get(i).get("rank"));
+                    for (Map<String, String> card : community) {
+                        ranks.add(card.get("rank"));
                     }
                     if (ranks.contains(card1Rank) || ranks.contains(card2Rank)){
                         return 200;
