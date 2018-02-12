@@ -25,11 +25,29 @@ public class Player {
 
     public static int betRequest(JsonElement request) {
         try{
+            System.out.println("1");
+            System.out.println("1");
+            System.out.println("1");
             JsonArray requests = request.getAsJsonArray();
+            System.out.println("2");
+            System.out.println("2");
+            System.out.println("2");
             JsonArray ourCards;
+            System.out.println("3");
+            System.out.println("3");
+            System.out.println("3");
+            System.out.println("3");
             String card1rank = "0";
             String card2rank = "0";
+            System.out.println("4");
+            System.out.println("4");
+            System.out.println("4");
+            System.out.println("4");
             for (JsonElement req : requests) {
+                System.out.println("5");
+                System.out.println("5");
+                System.out.println("5");
+                System.out.println("5");
                 if (req.getAsJsonObject().get("hole_cards") != null){
                     ourCards = req.getAsJsonArray();
                     card1rank = ourCards.get(0).getAsJsonObject().get("rank").getAsString();
@@ -60,6 +78,12 @@ public class Player {
 
 //            obj.get("");
         } catch (Exception e){
+        System.out.println("exception" + e);
+        System.out.println("exception" + e);
+        System.out.println("exception" + e);
+        System.out.println("exception" + e);
+        System.out.println("exception" + e);
+        System.out.println("exception" + e);
           return 0;
         }
     }
