@@ -1,9 +1,11 @@
 package org.leanpoker.player;
 
-import com.google.gson.*;
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -13,8 +15,8 @@ public class Player {
 
     static List<String> getGoodHeights() {
         List<String> goodRanks = new ArrayList<>();
-        String[] ranks = { "A","K","Q","J","10" };
-        for(int i = 0; i < ranks.length; i++){
+        String[] ranks = {"A", "K", "Q", "J", "10"};
+        for (int i = 0; i < ranks.length; i++) {
             goodRanks.add(ranks[i]);
         }
         return goodRanks;
@@ -22,7 +24,7 @@ public class Player {
 
 
     public static int betRequest(JsonElement request) {
-        try{
+        try {
             JsonObject object = request.getAsJsonObject();
             JsonArray jarray = object.getAsJsonArray("players");
             JsonObject ourPlayer = jarray.get(2).getAsJsonObject();
@@ -49,13 +51,15 @@ public class Player {
 
             if (getGoodHeights().contains(card1Rank) && getGoodHeights().contains(card2Rank) && card1Rank.equals(card2Rank)) {
                 return 500;
+            } else if (getGoodHeights().contains(card1Rank) || getGoodHeights().contains(card2Rank)) {
+                System.out.println("It could have been good");
+                return 0;
             } else {
                 return 0;
             }
-
-        } catch (Exception e){
-        System.out.println("EXCEPTION !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!" + e);
-          return 0;
+        } catch (Exception e) {
+            System.out.println("EXCEPTION !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!" + e);
+            return 0;
         }
     }
 
