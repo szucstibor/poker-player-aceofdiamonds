@@ -49,11 +49,9 @@ public class Player {
             String card1Rank = (String) card1Map.get("rank");
             String card2Rank = (String) card2Map.get("rank");
 
-            List<String> goodCards = getGoodHeights();
-
             if (getGoodHeights().contains(card1Rank) && getGoodHeights().contains(card2Rank) && card1Rank.equals(card2Rank)) {
                 return 500;
-            } else if (goodCards.contains(card1Rank) || goodCards.contains(card2Rank)) {
+            } else if (getGoodHeights().contains(card1Rank) || getGoodHeights().contains(card2Rank)) {
                 System.out.println("It could have been good");
                 return 0;
             } else {
