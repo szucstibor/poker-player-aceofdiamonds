@@ -23,11 +23,13 @@ public class Player {
     }
 
 
-
     public static int betRequest(JsonElement request) {
         try {
             JsonObject object = request.getAsJsonObject();
             JsonArray jarray = object.getAsJsonArray("players");
+            JsonArray communityCards = object.getAsJsonArray("community_cards");
+            JsonArray blind = object.getAsJsonArray("small_blind");
+            Integer smallBlind = new Gson().fromJson(blind, Integer.class);
             JsonObject ourPlayer = jarray.get(2).getAsJsonObject();
 
             System.out.println("OBJECT++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" + object);
@@ -52,17 +54,34 @@ public class Player {
             System.out.println(card2Map.get("rank"));
 
 
-
             String card1Rank = (String) card1Map.get("rank");
             String card2Rank = (String) card2Map.get("rank");
 
-            if (getGoodHeights().contains(card1Rank) && getGoodHeights().contains(card2Rank) && card1Rank.equals(card2Rank)) {
-                if (ourStackInt < 500) {
-                    return ourStackInt;
+
+            if (getGoodHeights().contains(card1Rank) && getGoodHeights().contains(card2Rank)) {
+                if (card1Rank.equals(card2Rank)) {
+                    if (ourStackInt < 500) {
+                        return ourStackInt;
+                    }
+                    return 500;
+                } else if (communityCards.size() == 0) {
+                    return smallBlind * 2;
+                } else {
+                    List<Map<String, String>> community = new ArrayList<>();
+                    List<String> ranks = new ArrayList<>();
+                    for (JsonElement card : communityCards) {
+                        community.add(new Gson().fromJson(card, Map.class));
+                    }
+                    for (int i = 0; i < community.size(); i++) {
+                        ranks.add(community.get(i).get("rank"));
+                    }
+                    if (ranks.contains(card1Rank) || ranks.contains(card2Rank)){
+                        return 200;
+                    } else {
+                        return 0;
+                    }
                 }
-                return 500;
             } else if (getGoodHeights().contains(card1Rank) || getGoodHeights().contains(card2Rank)) {
-                System.out.println("It could have been good");
                 return 0;
             } else {
                 return 0;
