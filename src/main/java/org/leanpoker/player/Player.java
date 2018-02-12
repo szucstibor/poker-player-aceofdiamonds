@@ -3,6 +3,7 @@ package org.leanpoker.player;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -28,6 +29,14 @@ public class Player {
             System.out.println("1");
             System.out.println("1");
             System.out.println("1");
+            JsonObject object = request.getAsJsonObject();
+            object = object.getAsJsonObject("players");
+            System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ezazgeci" + object);
+            System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ezazgeci" + object);
+            System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ezazgeci" + object);
+            System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ezazgeci" + object);
+            System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ezazgeci" + object);
+            System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ezazgeci" + object);
             JsonObject r = request.getAsJsonObject();
             JsonArray requests = r.getAsJsonArray();
             System.out.println("2");
