@@ -41,7 +41,11 @@ public class Player {
             JsonElement card1 = ourCards.get(0);
             JsonElement card2 = ourCards.get(1);
 
-            System.out.println("CARD111111111111111111111111111111111111111111" + card1);
+            try{
+                System.out.println("CARD111111111111111111111111111111111111111111" + card1.getAsInt());
+            } catch (Exception e){
+                System.out.println("card failed");
+            }
             System.out.println("CARD222222222222222222222222222222222222222222" + card2);
 
             /*for (JsonElement req : jarray) {
