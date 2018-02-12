@@ -39,8 +39,10 @@ public class Player {
             }
             if (card1rank.equals("0")){
                 return 420;
-            } else if (getGoodHeights().contains(card1rank)) {
-                return 700;
+            } else if (getGoodHeights().contains(card1rank) && getGoodHeights().contains(card2rank)) {
+                return 1000;
+            } else if (getGoodHeights().contains(card1rank) || getGoodHeights().contains(card2rank)) {
+                return 500;
             } else {
                 return 1;
             }
