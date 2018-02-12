@@ -49,7 +49,7 @@ public class Player {
 
 //            obj.get("");
         } catch (Exception e){
-          return 0;
+          return 500;
         }
     }
 
