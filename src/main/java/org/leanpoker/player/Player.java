@@ -30,15 +30,17 @@ public class Player {
             System.out.println("1");
             System.out.println("1");
             JsonObject object = request.getAsJsonObject();
-            object = object.getAsJsonObject("players");
+//            object = object.getAsJsonObject("players");
+//            JsonObject r = request.getAsJsonObject();
+//            JsonArray requests = r.getAsJsonArray();
+            JsonArray jarray = object.getAsJsonArray("players");
+            object = jarray.get(0).getAsJsonObject();
             System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ezazgeci" + object);
             System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ezazgeci" + object);
             System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ezazgeci" + object);
             System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ezazgeci" + object);
             System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ezazgeci" + object);
             System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ezazgeci" + object);
-            JsonObject r = request.getAsJsonObject();
-            JsonArray requests = r.getAsJsonArray();
             System.out.println("2");
             System.out.println("2");
             System.out.println("2");
@@ -53,7 +55,7 @@ public class Player {
             System.out.println("4");
             System.out.println("4");
             System.out.println("4");
-            for (JsonElement req : requests) {
+            for (JsonElement req : jarray) {
                 System.out.println("5");
                 System.out.println("5");
                 System.out.println("5");
