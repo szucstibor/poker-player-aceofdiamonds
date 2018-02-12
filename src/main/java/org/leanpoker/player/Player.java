@@ -14,7 +14,6 @@ public class Player {
     static final String VERSION = "Default Java folding player";
 
     static List<String> getGoodHeights() {
-        List<HashMap<String, String>> goodCardCombinations = new ArrayList<>();
         List<String> goodRanks = new ArrayList<>();
         String[] ranks = { "A","K","Q","J","10" };
         for(int i = 0; i < ranks.length; i++){
