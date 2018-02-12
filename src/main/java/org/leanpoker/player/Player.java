@@ -42,7 +42,7 @@ public class Player {
             }
 //            obj.get("");
         } catch (Exception e){
-          return 999;
+          return 1;
         }
         return 1000;
     }
