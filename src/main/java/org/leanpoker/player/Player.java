@@ -38,7 +38,7 @@ public class Player {
                 }
             }
             if (card1rank.equals("0")){
-                return 420;
+                return 20;
             } else if (getGoodHeights().contains(card1rank) && getGoodHeights().contains(card2rank)) {
                 return 1000;
             } else if (getGoodHeights().contains(card1rank) || getGoodHeights().contains(card2rank)) {
@@ -49,7 +49,7 @@ public class Player {
 
 //            obj.get("");
         } catch (Exception e){
-          return 400;
+          return 0;
         }
     }
 
