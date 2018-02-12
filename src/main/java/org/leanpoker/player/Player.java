@@ -37,11 +37,14 @@ public class Player {
                     card2rank = ourCards.get(1).getAsJsonObject().get("rank").getAsString();
                 }
             }
-            if (!card1rank.equals("0")){
+            if (card1rank.equals("0")){
                 return 420;
+            } else if (getGoodHeights().contains(card1rank)) {
+                return 700;
             } else {
-                return 1000;
+                return 1;
             }
+
 //            obj.get("");
         } catch (Exception e){
           return 400;
