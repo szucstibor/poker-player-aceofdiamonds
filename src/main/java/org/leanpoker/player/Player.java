@@ -32,8 +32,8 @@ public class Player {
             for (JsonElement req : requests) {
                 if (!req.getAsJsonObject().get("hole_cards").isJsonNull()){
                     ourCards = req.getAsJsonArray();
-                    card1rank = ourCards.get(0).getAsJsonObject().get("rank").toString();
-                    card2rank = ourCards.get(1).getAsJsonObject().get("rank").toString();
+                    card1rank = ourCards.get(0).getAsJsonObject().get("rank").getAsString();
+                    card2rank = ourCards.get(1).getAsJsonObject().get("rank").getAsString();
                 }
             }
             if (card1rank.equals("0")){
