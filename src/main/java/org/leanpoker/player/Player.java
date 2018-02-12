@@ -39,14 +39,13 @@ public class Player {
             }
             if (!card1rank.equals("0")){
                 return 420;
-            } else{
-                return 430;
+            } else {
+                return 1000;
             }
 //            obj.get("");
         } catch (Exception e){
           return 400;
         }
-        return 1000;
     }
 
     public static void showdown(JsonElement game) {
