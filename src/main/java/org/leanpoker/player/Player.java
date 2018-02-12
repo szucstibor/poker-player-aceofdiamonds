@@ -28,9 +28,9 @@ public class Player {
         try{
             JsonArray requests = request.getAsJsonArray();
             List<Map<String, String>> ourCards = new ArrayList();
-            for (JsonElement request : requests) {
+            for (JsonElement req : requests) {
                 if (!request.getAsJsonObject().get("hole_cards").isJsonNull()){
-                    ourCards.add(request.getAsJsonObject().get("hole_cards"));
+                    ourCards.add(req.getAsJsonObject().get("hole_cards"));
                 }
             }
 //            obj.get("");
