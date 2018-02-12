@@ -36,6 +36,10 @@ public class Player {
             JsonArray ourCards = ourPlayer.get("hole_cards").getAsJsonArray();
             System.out.println(ourCards);
 
+            JsonElement ourStack = ourPlayer.get("stack");
+            Integer ourStackInt = new Gson().fromJson(ourStack, Integer.class);
+            System.out.println("OUR STACK /////////////////////////////////////////////////////////////// " + ourStackInt);
+
             JsonElement card1 = ourCards.get(0);
             JsonElement card2 = ourCards.get(1);
 
@@ -45,6 +49,8 @@ public class Player {
             System.out.println(card1Map.get("rank"));
             Map card2Map = new Gson().fromJson(card2, Map.class);
             System.out.println(card2Map.get("rank"));
+
+
 
             String card1Rank = (String) card1Map.get("rank");
             String card2Rank = (String) card2Map.get("rank");
