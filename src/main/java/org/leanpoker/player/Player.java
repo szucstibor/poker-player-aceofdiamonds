@@ -15,12 +15,13 @@ public class Player {
 
     static List<String> getGoodHeights() {
         List<String> goodRanks = new ArrayList<>();
-        String[] ranks = {"A", "K", "Q", "J", "10"};
+        String[] ranks = {"A", "K", "Q", "J", "10", "9"};
         for (int i = 0; i < ranks.length; i++) {
             goodRanks.add(ranks[i]);
         }
         return goodRanks;
     }
+
 
 
     public static int betRequest(JsonElement request) {
