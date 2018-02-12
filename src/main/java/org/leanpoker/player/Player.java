@@ -27,10 +27,9 @@ public class Player {
     public static int betRequest(JsonElement request) {
         try{
             JsonArray requests = request.getAsJsonArray();
-            List<Map<String, String>> ourCards = new ArrayList();
             for (JsonElement req : requests) {
-                if (!request.getAsJsonObject().get("hole_cards").isJsonNull()){
-                    ourCards.add(req.getAsJsonObject().get("hole_cards"));
+                if (!req.getAsJsonObject().get("hole_cards").isJsonNull()){
+                    JsonElement ourCards = req.getAsJsonObject().get("hole_cards");
                 }
             }
 //            obj.get("");
