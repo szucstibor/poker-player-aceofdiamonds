@@ -45,6 +45,9 @@ public class Player {
             Map result2 = new Gson().fromJson(card2, Map.class);
             System.out.println(result2.get("rank"));
 
+            String rank1 = (String) result1.get("rank");
+            String rank2 = (String) result2.get("rank");
+
             /*for (JsonElement req : jarray) {
                 if (req.getAsJsonObject().get("hole_cards") != null){
                     ourCards = req.getAsJsonArray();
@@ -63,9 +66,7 @@ public class Player {
                 }
             }*/
 
-            if (card1rank.equals("0")){
-                return 1;
-            } else if (getGoodHeights().contains(card1rank) && getGoodHeights().contains(card2rank) && card1rank.equals(card2rank)) {
+            if (getGoodHeights().contains(rank1) && getGoodHeights().contains(rank2) && rank1.equals(rank2)) {
                 return 500;
             /*} else if (getGoodHeights().contains(card1rank) && getGoodHeights().contains(card2rank)) {
                 return 20;
