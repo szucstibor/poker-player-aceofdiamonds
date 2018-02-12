@@ -25,6 +25,7 @@ public class Player {
 
 
     public static int betRequest(JsonElement request) {
+        try{
             JsonArray requests = request.getAsJsonArray();
             JsonArray ourCards;
             int card1rank = 0;
@@ -40,7 +41,10 @@ public class Player {
                 return 420;
             }
 //            obj.get("");
-        return 600;
+        } catch (Exception e){
+          return 400;
+        }
+        return 1000;
     }
 
     public static void showdown(JsonElement game) {
