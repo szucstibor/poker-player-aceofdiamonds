@@ -24,8 +24,18 @@ public class Player {
 
 
     public static int betRequest(JsonElement request) {
-        JsonObject obj = request.getAsJsonObject();
-        obj.get("");
+        try{
+            JsonArray requests = request.getAsJsonArray("request");
+            List<> ourCards = new ArrayList();
+            for (JsonElement request : requests) {
+                if (request.getAsJsonObject().get("hole_cards") != []){
+                    ourCards.add(request.getAsJsonObject().get("hole_cards"));
+                }
+            }
+            obj.get("");
+        } catch (Exeption e){
+          return 999;
+        }
         return 1000;
     }
 
