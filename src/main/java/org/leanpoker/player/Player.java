@@ -26,23 +26,24 @@ public class Player {
 
     public static int betRequest(JsonElement request) {
         try{
-            System.out.println("1");
-            System.out.println("1");
-            System.out.println("1");
             JsonObject object = request.getAsJsonObject();
             JsonArray jarray = object.getAsJsonArray("players");
             JsonObject ourPlayer = jarray.get(2).getAsJsonObject();
             System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ezazgeciobject" + object);
             System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ezazgecijarray" + jarray);
             System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ezazgeciasd" + ourPlayer);
-            System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ezazgeci" + object);
-            System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ezazgeci" + object);
-            System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ezazgeci" + object);
             String card1rank = "0";
             String card2rank = "0";
 
             JsonArray ourCards = ourPlayer.get("hole_cards").getAsJsonArray();
             System.out.println(ourCards);
+
+            JsonElement card1 = ourCards.get(0);
+            JsonElement card2 = ourCards.get(1);
+
+            System.out.println("CARD111111111111111111111111111111111111111111" + card1);
+            System.out.println("CARD222222222222222222222222222222222222222222" + card2);
+
             /*for (JsonElement req : jarray) {
                 if (req.getAsJsonObject().get("hole_cards") != null){
                     ourCards = req.getAsJsonArray();
