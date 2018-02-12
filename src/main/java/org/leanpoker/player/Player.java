@@ -29,7 +29,7 @@ public class Player {
             JsonArray requests = request.getAsJsonArray("request");
             List<Map<String, String>> ourCards = new ArrayList();
             for (JsonElement request : requests) {
-                if (request.getAsJsonObject().get("hole_cards").isEmpty()){
+                if (!request.getAsJsonObject().get("hole_cards").isJsonNull()){
                     ourCards.add(request.getAsJsonObject().get("hole_cards"));
                 }
             }
