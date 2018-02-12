@@ -42,7 +42,7 @@ public class Player {
             JsonElement card2 = ourCards.get(1);
 
             try{
-                System.out.println("CARD111111111111111111111111111111111111111111" + card1.getAsInt());
+                System.out.println("CARD111111111111111111111111111111111111111111" + card1.getAsJsonArray().get(0));
             } catch (Exception e){
                 System.out.println("card failed");
             }
