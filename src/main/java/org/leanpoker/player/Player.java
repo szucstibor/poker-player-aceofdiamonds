@@ -25,7 +25,7 @@ public class Player {
 
     public static int betRequest(JsonElement request) {
         try{
-            JsonArray requests = request.getAsJsonObject().getAsJsonArray();
+            JsonArray requests = request.getAsJsonArray();
             JsonArray ourCards;
             String card1rank = "0";
             String card2rank = "0";
