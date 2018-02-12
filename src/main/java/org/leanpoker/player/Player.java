@@ -1,9 +1,6 @@
 package org.leanpoker.player;
 
-import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
+import com.google.gson.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -41,12 +38,12 @@ public class Player {
             JsonElement card1 = ourCards.get(0);
             JsonElement card2 = ourCards.get(1);
 
-            try{
-                System.out.println("CARD111111111111111111111111111111111111111111" + card1.getAsJsonArray().get(0));
-            } catch (Exception e){
-                System.out.println("card failed");
-            }
-            System.out.println("CARD222222222222222222222222222222222222222222" + card2);
+            System.out.println("____________________________________________________________________");
+            System.out.println(ourCards);
+            Map result1 = new Gson().fromJson(card1, Map.class);
+            System.out.println(result1.get("rank"));
+            Map result2 = new Gson().fromJson(card2, Map.class);
+            System.out.println(result2.get("rank"));
 
             /*for (JsonElement req : jarray) {
                 if (req.getAsJsonObject().get("hole_cards") != null){
