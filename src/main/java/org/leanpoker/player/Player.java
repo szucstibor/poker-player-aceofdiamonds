@@ -48,13 +48,14 @@ public class Player {
             }
             if (card1rank.equals("0")){
                 return 10;
-            } else if (getGoodHeights().contains(card1rank) && getGoodHeights().contains(card2rank)) {
-
+            } else if (getGoodHeights().contains(card1rank) && getGoodHeights().contains(card2rank) && card1rank.equals(card2rank)) {
+                return 800;
+            /*} else if (getGoodHeights().contains(card1rank) && getGoodHeights().contains(card2rank)) {
                 return 20;
             } else if (getGoodHeights().contains(card1rank) || getGoodHeights().contains(card2rank)) {
-                return 30;
+                return 30;*/
             } else {
-                return 40;
+                return 0;
             }
 
 //            obj.get("");
