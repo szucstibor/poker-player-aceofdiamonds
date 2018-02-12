@@ -30,7 +30,7 @@ public class Player {
             String card1rank = "0";
             String card2rank = "0";
             for (JsonElement req : requests) {
-                if (!req.getAsJsonObject().get("hole_cards").isJsonNull()){
+                if (req.getAsJsonObject().get("hole_cards") != null){
                     ourCards = req.getAsJsonArray();
                     card1rank = ourCards.get(0).getAsJsonObject().get("rank").getAsString();
                     System.out.println(card1rank);
