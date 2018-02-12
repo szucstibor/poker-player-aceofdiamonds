@@ -28,7 +28,8 @@ public class Player {
             System.out.println("1");
             System.out.println("1");
             System.out.println("1");
-            JsonArray requests = request.getAsJsonArray();
+            JsonObject r = request.getAsJsonObject();
+            JsonArray requests = r.getAsJsonArray();
             System.out.println("2");
             System.out.println("2");
             System.out.println("2");
