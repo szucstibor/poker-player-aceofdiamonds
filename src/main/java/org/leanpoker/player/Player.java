@@ -27,10 +27,18 @@ public class Player {
     public static int betRequest(JsonElement request) {
         try{
             JsonArray requests = request.getAsJsonArray();
+            JsonArray ourCards;
+            int card1rank = 0;
+            int card2rank = 0;
             for (JsonElement req : requests) {
                 if (!req.getAsJsonObject().get("hole_cards").isJsonNull()){
-                    JsonElement ourCards = req.getAsJsonObject().get("hole_cards");
+                    ourCards = req.getAsJsonArray();
+                    card1rank = ourCards.get(0).getAsJsonObject().get("rank").getAsInt();
+                    card2rank = ourCards.get(1).getAsJsonObject().get("rank").getAsInt();
                 }
+            }
+            if (card1rank != 0){
+                return 420;
             }
 //            obj.get("");
         } catch (Exception e){
