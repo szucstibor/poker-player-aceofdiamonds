@@ -56,6 +56,9 @@ public class Player {
             String card2Rank = (String) card2Map.get("rank");
 
             if (getGoodHeights().contains(card1Rank) && getGoodHeights().contains(card2Rank) && card1Rank.equals(card2Rank)) {
+                if (ourStackInt < 500) {
+                    return ourStackInt;
+                }
                 return 500;
             } else if (getGoodHeights().contains(card1Rank) || getGoodHeights().contains(card2Rank)) {
                 System.out.println("It could have been good");
